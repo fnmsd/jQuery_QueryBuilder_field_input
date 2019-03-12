@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>jQuery QueryBuilder</title>
+
+  
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://querybuilder.js.org/assets/css/docs.min.css" rel="stylesheet">
+  <link href="https://querybuilder.js.org/assets/css/style.css" rel="stylesheet">
+
+  <style>
+    #content {
+      background:#0074d9;
+      background:linear-gradient(135deg, #0074d9, #001f3f);
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
+  <script src="https://querybuilder.js.org/assets/js/docs.min.js"></script>
+  <script src="https://querybuilder.js.org/assets/js/script.js"></script>
+</head>
+
+<body>
+  <!-- Main navigation
+  =========================================== -->
+  <header class="navbar navbar-static-top bs-docs-nav" id="top">
+    <div class="container">
+      <div class="navbar-header" role="banner">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://querybuilder.js.org/index.html">jQuery QueryBuilder</a>
+      </div>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+        
+          <li class="active">
+  <a href="https://querybuilder.js.org/demo.html">Demos</a>
+</li>
+
+<li >
+  <a href="https://querybuilder.js.org/plugins.html">Plugins</a>
+</li>
+
+<li>
+  <a href="https://querybuilder.js.org/api">API</a>
+</li>
+
+<li>
+  <a href="https://querybuilder.js.org/changelog.html">Changelog</a>
+</li>
+
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Advanced <span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    <li >
+      <a href="https://querybuilder.js.org/dev/plugins.html">Create plugins</a>
+    </li>
+
+    <li >
+      <a href="https://querybuilder.js.org/dev/no-bootstrap.html">No Bootstrap</a>
+    </li>
+  </ul>
+</li>
+
+        
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        
+          <li>
+            <a href="https://github.com/mistic100/jQuery-QueryBuilder">GitHub</a>
+          </li>
+        
+          <li>
+            <a href="https://www.strangeplanet.fr">StrangePlanet</a>
+          </li>
+        
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Header
+  =========================================== -->
+  
+  <div class="bs-docs-header" id="content">
+    <div class="container">
+      <h1>Demos</h1>
+      <p></p>
+    </div>
+  </div>
+  
+
+  <div class="container bs-docs-container">
+    <div class="row">
+      <!-- Content
+      =========================================== -->
+      <div class="col-md-9" role="main">
+        <section class="bs-docs-section clearfix">
+  <h1 id="basic" class="page-header">
+    Basic
+  </h1>
+
+  <p>This demo shows the basic features of the QueryBuilder. Click one of the blue buttons to trigger the validation and
+    display the output.</p>
+
+  <a href="https://querybuilder.js.org/assets/demo-basic.js" class="btn btn-default"><b>&lt;/&gt;</b> See source</a>
+
+  <div class="col-md-12">
+    <div id="builder-basic"></div>
+
+    <div class="btn-group">
+      <button class="btn btn-warning reset" data-target="basic">Reset</button>
+      <button class="btn btn-success set-json" data-target="basic">Set rules</button>
+      <button class="btn btn-primary parse-json" data-target="basic">Get rules</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="bs-docs-section clearfix">
+  <h1 id="widgets" class="page-header">
+    Widgets
+  </h1>
+
+  <p>This demo shows how to integrate widgets into QueryBuilder rules. Widgets used are <a
+    href="https://github.com/eternicode/bootstrap-datepicker">Bootstrap Datepicker</a>,
+    <a href="https://github.com/seiyria/bootstrap-slider">Bootstrap Slider</a> and <a
+      href="https://github.com/brianreavis/selectize.js">Selectize</a>.<br>
+    The filter <b>Coordinates</b> shows how to define a custom input (here two linked &lt;select&gt;) without using a
+    plugin.</p>
+
+  <a href="https://querybuilder.js.org/assets/demo-widgets.js" class="btn btn-default"><b>&lt;/&gt;</b> See source</a>
+
+  <div class="col-md-12">
+    <div id="builder-widgets"></div>
+
+    <div class="btn-group">
+      <button class="btn btn-warning reset" data-target="widgets">Reset</button>
+      <button class="btn btn-success set-json" data-target="widgets">Set rules</button>
+      <button class="btn btn-primary parse-json" data-target="widgets">Get rules</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="bs-docs-section clearfix">
+  <h1 id="plugins" class="page-header">
+    Plugins
+  </h1>
+
+  <p>This demo uses all <a href="https://querybuilder.js.org/plugins.html">plugins</a> with their default configuration.</p>
+
+  <a href="https://querybuilder.js.org/assets/demo-plugins.js" class="btn btn-default"><b>&lt;/&gt;</b> See source</a>
+
+  <div class="col-md-12">
+    <div id="builder-plugins"></div>
+
+    <div class="btn-group">
+      <button class="btn btn-warning reset" data-target="plugins">Reset</button>
+      <button class="btn btn-success set-json" data-target="plugins">Set rules</button>
+      <button class="btn btn-primary parse-json" data-target="plugins">Get rules</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="bs-docs-section clearfix">
+  <h1 id="import_export" class="page-header">
+    Import/Export
+  </h1>
+
+  <p>This demo shows how SQL and MongoDB import/export features are working.</p>
+
+  <a href="https://querybuilder.js.org/assets/demo-import-export.js" class="btn btn-default"><b>&lt;/&gt;</b> See source</a>
+
+  <div class="col-md-12">
+    <div id="builder-import_export"></div>
+
+    <div class="btn-group">
+      <button class="btn btn-warning reset" data-target="import_export">Reset</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-success set-sql" data-target="import_export">Set rules from SQL</button>
+      <button class="btn btn-success set-mongo" data-target="import_export">Set rules from MongoDB</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-primary parse-sql" data-target="import_export" data-stmt="false">SQL</button>
+      <button class="btn btn-primary parse-sql" data-target="import_export" data-stmt="question_mark">SQL statement
+        (?)
+      </button>
+      <button class="btn btn-primary parse-sql" data-target="import_export" data-stmt="named">SQL statement (named)
+      </button>
+      <button class="btn btn-primary parse-mongo" data-target="import_export">MongoDB</button>
+    </div>
+  </div>
+</section>
+
+
+<link href="https://querybuilder.js.org/node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+<link href="https://querybuilder.js.org/node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css" rel="stylesheet">
+<link href="https://querybuilder.js.org/node_modules/selectize/dist/css/selectize.bootstrap3.css" rel="stylesheet">
+<link href="https://querybuilder.js.org/node_modules/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+<link href="https://querybuilder.js.org/node_modules/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="https://querybuilder.js.org/node_modules/jQuery-QueryBuilder/dist/css/query-builder.default.min.css" rel="stylesheet">
+
+<script src="https://querybuilder.js.org/node_modules/moment/min/moment.min.js"></script>
+<script src="https://querybuilder.js.org/node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<script src="https://querybuilder.js.org/node_modules/bootstrap-slider/dist/bootstrap-slider.min.js"></script>
+<script src="https://querybuilder.js.org/node_modules/selectize/dist/js/standalone/selectize.min.js"></script>
+<script src="https://querybuilder.js.org/node_modules/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+<script src="https://querybuilder.js.org/node_modules/jQuery-QueryBuilder/dist/js/query-builder.standalone.min.js"></script>
+<!-- 引入插件-->
+<script src="QueryBuilder_input.js"></script>
+
+
+<script src="https://querybuilder.js.org/node_modules/sql-parser-mistic/browser/sql-parser.min.js"></script>
+<script src="https://querybuilder.js.org/node_modules/interactjs/dist/interact.min.js"></script>
+
+<script>var baseurl = 'https://querybuilder.js.org';</script>
+<script src="https://querybuilder.js.org/assets/demo-basic.js"></script>
+<script src="https://querybuilder.js.org/assets/demo-widgets.js"></script>
+<script src="https://querybuilder.js.org/assets/demo-plugins.js"></script>
+<script src="https://querybuilder.js.org/assets/demo-import-export.js"></script>
+<script src="https://querybuilder.js.org/assets/demo.js"></script>
+
+<style>
+  .code-popup {
+    max-height: 500px;
+  }
+</style>
+
+      </div>
+
+      <!-- Page navigation
+      =========================================== -->
+      <div class="col-md-3" role="complementary">
+        <div class="bs-docs-sidebar hidden-print">
+          <ul class="nav bs-docs-sidenav">
+          </ul>
+          <a class="back-to-top" href="#top">
+            <i class="glyphicon glyphicon-chevron-up"></i> Back to top
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer
+  =========================================== -->
+  <footer class="bs-docs-footer" role="contentinfo">
+    <div class="container">
+      <div class="bs-docs-social">
+        <ul class="bs-docs-social-buttons">
+        
+          <li>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mistic100&amp;repo=jQuery-QueryBuilder&amp;type=watch&amp;count=true" width="90" height="20" title="Star on GitHub"></iframe>
+          </li>
+          <li>
+            <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=mistic100&amp;repo=jQuery-QueryBuilder&amp;type=fork&amp;count=true" width="90" height="20" title="Fork on GitHub"></iframe>
+          </li>
+        
+        
+          <li>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://querybuilder.js.org" data-count="horizontal" data-via="mistic100" data-text="jQuery QueryBuilder" data-hashtags="jQuery,QueryBuilder">Tweet</a>
+          </li>
+        
+        
+          <li>
+            <a href="https://twitter.com/mistic100" class="twitter-follow-button" data-show-count="true">Follow @mistic100</a>
+          </li>
+        
+        
+          <li>
+            <div class="fb-like" data-href="https://querybuilder.js.org" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+          </li>
+        
+        
+        </ul>
+      </div>
+
+      <p>
+        Licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>,
+        documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+      </p>
+      <p>
+        Documentation template by <a href="http://getbootstrap.com">Bootstrap team</a>,
+        generated with <a href="https://github.com/mistic100/jekyll-bootstrap-doc">Jekyll Bootstrap Doc</a>
+      </p>
+
+      <ul class="bs-docs-footer-links muted">
+        <li>Currently v2.5.2</li>
+      
+        <li>&middot;</li>
+        <li><a href="https://github.com/mistic100/jQuery-QueryBuilder">GitHub</a></li>
+      
+        <li>&middot;</li>
+        <li><a href="https://github.com/mistic100/jQuery-QueryBuilder/issues?state=open">Issues</a></li>
+      
+      </ul>
+    </div>
+  </footer>
+
+
+  <!-- Async scripts
+  =========================================== -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.0.1/trianglify.min.js"></script>
+  <script>jekyllBootstrapDoc.trianglify('#0074d9', '#001f3f', 'jQuery QueryBuilder');</script>
+  
+
+  var _ret = undefined
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+      js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+  
+
+  
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  
+
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-28192323-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+
+</body>
+</html>
