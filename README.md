@@ -54,4 +54,7 @@ $('#builder-import_export').queryBuilder({
 
 validation中也可以获取字段名，所以也可以对字段名进行检查。
 
+## 参考资料
+[https://querybuilder.js.org/](https://querybuilder.js.org/)
+
 **非专业前端，不喜勿喷。**
